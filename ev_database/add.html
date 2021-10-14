@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Add new Electric Vehicle</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <div style="width:450px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    <h2><em>Enter the details of the electric vehicle to be added</em></h2>
+    <br />
+    <form method="post" action="/addConfirm">
+      <div>
+        <label style="float:left;width:180px;text-align:center;padding-right:10px;">Name</label>
+        <input type="text" name="ev_name" value="" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Manufacturer</label>
+        <input type="text" name="ev_manufacturer" value="" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Year</label>
+        <input type="number" name="ev_year" step="0001" value="" min="0" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Battery size</label>
+        <input type="number" step="0.01" name="ev_battery_size" value="" min="0" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">WLTP range</label>
+        <input type="number" step="0.01" name="ev_WLTP_range" value="" min="0" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Cost</label>
+        <input type="number" step="0.01" name="ev_cost" value="" min="0" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Power</label>
+        <input type="number" step="0.01" name="ev_power" value="" min="0" style="float:left" required />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <input type="submit" value="Add" name="button" />
+      </div>
+    </form>
+    <div style="margin-top:20px;margin-bottom:20px">
+      <form method="post" action="/add">
+        <input type="submit" value="Cancel" name="button" />
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

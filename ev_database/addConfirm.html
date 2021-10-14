@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electric Vehicle Details addition</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:600px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    {% if not duplicate %}
+    <h1>Electric Vehicle Details</h1>
+    <br />
+    <p>Name: {{ ev.name }}</p>
+    <p>Manufacturer: {{ ev.manufacturer }}</p>
+    <p>Year: {{ ev.year }}</p>
+    <p>Battery size: {{ ev.battery_size }}</p>
+    <p>WLTP range: {{ ev.WLTP_range }}</p>
+    <p>Cost: {{ ev.cost }}</p>
+    <p>Power: {{ ev.power }}</p>
+    <h3>Added succesfully!!</h3>
+  </div>
+
+  {% else %}
+  <h1>Duplicate....addition failed</h1>
+  {% endif %}
+</body>
+
+</html>

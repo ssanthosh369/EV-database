@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Add new Electric Vehicle</title>
+  </head>
+  <body style="background-color:powderblue;">
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:500px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+     <h1>Welcome {{ user }}, Enter your review below</h1>
+    <p>Name:  {{ total_query.name }}</p>
+    <p>Manufacturer: {{ total_query.manufacturer }}</p>
+    <p>Year: {{ total_query.year }}</p>
+
+    <form method="post" action="/confirmReview">
+
+      <div>
+      <label style="float:left;width:180px;text-align:center;padding-right:10px;">Review</label>
+      <input type="text" name="ev_review" value="" required maxlength="1000" style="float:left"/>
+      </div>
+      <br/>
+      <div>
+      <label style="float:left;width:180px;text-align:center;padding-right:10px;">Rating</label>
+      <input type="number" name="ev_rating" step="1" value="0" required min="0" max="10" style="float:left"/>
+      </div>
+      <br/>
+      <input type="hidden" value= {{ key }} name="key"/>
+      <div style="margin-top:20px;margin-bottom:20px">
+      <input type="submit" value="Add" name="button"/>
+    </div>
+    </form>
+    <div style="margin-top:20px;margin-bottom:20px">
+    <form method="get" action="/">
+      <input type="submit" value="Cancel" name="button"/>
+    </form>
+  </div>
+</div>
+  </body>
+</html>

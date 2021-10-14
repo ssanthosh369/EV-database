@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Deletion confirmation</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:600px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    <h1>Electric Vehicle Details</h1>
+    <p>Name: {{ total_query.name }}</p>
+    <p>Manufacturer: {{ total_query.manufacturer }}</p>
+    <p>Year: {{ total_query.year }}</p>
+    <p>Battery size: {{ total_query.battery_size }}</p>
+    <p>WLTP range: {{ total_query.WLTP_range }}</p>
+    <p>Cost: {{ total_query.cost }}</p>
+    <p>Power: {{ total_query.power }}</p>
+
+    <h3>Successfully deleted!</h3>
+  </div>
+</body>
+
+</html>

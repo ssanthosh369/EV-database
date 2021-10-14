@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>User login/logout with datastore</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <div style="width:600px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    {% if user %}
+    <h1>{{ welcome }} {{ user.email() }} to the Electric Vehicles Database</h1>
+    <br />
+    <br />
+    <h2><a href="/add">Add a new Electric Vehicle</a></h2>
+    <br />
+    {% else %}
+    <h1>Hello guest, Welcome to the Electric Vehicles Database</h1>
+    {% endif %}
+    <h2><a href="/view"> View Electric Vehicle database </a></h2>
+    <br />
+    <br />
+    <h2><a href="/compare"> Compare electric vehicles </a></h2>
+    <br>
+    <br />
+    <h2><a href='{{ url }}'>{{ url_string }}</a></h2>
+  </div>
+</body>
+
+</html>

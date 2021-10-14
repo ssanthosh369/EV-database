@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electric Vehicle Database</title>
+</head>
+
+<body style="background-color:powderblue;">
+
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:450px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    <h1>Search Results</h1>
+    <br />
+    <p>Total search results: {{ length }}</p>
+    <br />
+    {% for i in total_query %}
+    <a href='/details?name={{ i.name }}&manu={{ i.manufacturer }}&year={{ i.year}}'>{{i.name}}</a><br />
+    {% endfor %}
+  </div>
+</body>
+
+</html>

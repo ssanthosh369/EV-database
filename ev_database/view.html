@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electric Vehicle Database</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <div style="width:600px;margin:50px auto; padding:20px;border: 5px dotted black;" align="center">
+    <h1><em>Enter search details</em></h1>
+    <br />
+    <form method="post" action="/search">
+      <div>
+        <label style="float:left;width:180px;text-align:center;padding-right:10px;">Name</label>
+        <input type="text" name="ev_name" value="" style="float:left" />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Manufacturer</label>
+        <input type="text" name="ev_manufacturer" value="" style="float:left" />
+      </div>
+      <br />
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Year</label>
+        <input type="number" name="ev_year_min" step="0001" value="" min="0" placeholder="Min Year" style="float:left" />
+        <input type="number" name="ev_year_max" step="0001" value="" placeholder="Max Year" />
+      </div>
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Battery size</label>
+        <input type="number" step="0.01" name="ev_battery_size_min" min="0" value="" placeholder="Min battery size" style="float:left" />
+        <input type="number" step="0.01" name="ev_battery_size_max" value="" placeholder="Max battery size" />
+      </div>
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">WLTP range</label>
+        <input type="number" step="0.01" name="ev_WLTP_range_min" min="0" value="" placeholder="Min WLTP range" style="float:left" />
+        <input type="number" step="0.01" name="ev_WLTP_range_max" value="" placeholder="Max WLTP range" />
+      </div>
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Cost</label>
+        <input type="number" step="0.01" name="ev_cost_min" value="" min="0" placeholder="Min cost" style="float:left" />
+        <input type="number" step="0.01" name="ev_cost_max" value="" placeholder="Max cost" />
+      </div>
+      <div style="margin-top:20px;margin-bottom:20px">
+        <label style="float:left;width:180px;clear:left;text-align:center;padding-right:10px;">Power</label>
+        <input type="number" step="0.01" name="ev_power_min" value="" min="0" placeholder="Min power" style="float:left" />
+        <input type="number" step="0.01" name="ev_power_max" step="0.01" value="" placeholder="Max power" />
+      </div>
+      <div style="margin-top:20px;margin-bottom:20px">
+        <input type="submit" value="Search" name="button" />
+      </div>
+    </form>
+    <form method="post" action="/search">
+      <input type="submit" value="Cancel" name="button" />
+    </form>
+  </div>
+  <br />
+</body>
+
+</html>

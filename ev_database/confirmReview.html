@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Review added confirmation</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:500px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    <h1>Updated details</h1>
+
+    <p>Name: {{ ev.name }}</p>
+    <p>Manufacturer:{{ ev.manufacturer }}</p>
+    <p>Year: {{ ev.year }}</p>
+
+    <hr>
+    <p>Review: {{ ev.reviews[len-1].review }}</p>
+    <p>Rating: {{ ev.reviews[len-1].rating }}</p>
+    <hr>
+
+    <h3>Review added succesfully!!</h3>
+</body>
+
+</html>

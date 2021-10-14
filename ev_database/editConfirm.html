@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electric Vehicle Details update confirmation</title>
+</head>
+
+<body style="background-color:powderblue;">
+  <h3 align="center"><a href='/'>Back to Main Page</a></h3>
+  <div style="width:600px;margin:0 auto;padding:20px;border: 5px dotted black;" align="center">
+    {% if dup == False %}
+    <h1>Updated details</h1>
+    <br />
+    <p>Key: {{ key}} </p>
+    <p>Name: {{ name }} to {{ ev.name }}</p>
+    <p>Manufacturer: {{ manufacturer }} to {{ ev.manufacturer }}</p>
+    <p>Year: {{ year }} to {{ ev.year }}</p>
+    <p>Battery size: {{ battery_size }} to {{ ev.battery_size }}</p>
+    <p>WLTP range: {{ WLTP_range }} to {{ ev.WLTP_range }}</p>
+    <p>Cost: {{ cost }} to {{ ev.cost }}</p>
+    <p>Power: {{ power }} to {{ ev.power }}</p>
+
+    <h3>Updated succesfully!!</h3>
+    {% else %}
+    <p align="center">Edit failed...there is already an existing electric vehicle with the new values entered</p>
+    {% endif %}
+  </div>
+</body>
+
+</html>

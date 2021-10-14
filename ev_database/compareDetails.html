@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electric Vehicle Comparison</title>
+</head>
+
+<body style="background-color:lightblue;">
+  <h1 align="center">Electric Vehicle Comparison</h1>
+  <h4 align="center"><a href='/compare'>Choose again</a></h4>
+  <h4 align="center"><a href='/'>Return to Main Page</a></h4>
+  <br />
+
+  <p align="center">Number of choices: {{ length }}</p>
+
+  {% if length > 1 %}
+  <table style="width:100%" cellspacing="8" cellpadding="0" border="0" align="center" bgcolor="maroon">
+    <tr bgcolor="#ffffff">
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Year</th>
+      <th>Battery size</th>
+      <th>WLTP range</th>
+      <th>Cost</th>
+      <th>Power</th>
+      <th>Avg Rating</th>
+    </tr>
+    {% for  total_query in i %}
+    <tr bgcolor="#ffffff">
+      <td align="center"><a href='/details?name={{ total_query.name }}&manu={{ total_query.manufacturer }}&year={{ total_query.year}}'> {{total_query.name}} </a></td>
+      <td align="center">{{ total_query.manufacturer }}</td>
+
+      {% if minyear == total_query.year %}
+      <td align="center" bgcolor="#db2f0a">{{ total_query.year }}</td>
+      {% elif maxyear == total_query.year %}
+      <td align="center" bgcolor="#2ecc71">{{ total_query.year }}</td>
+      {% else %}
+      <td align="center">{{ total_query.year }}</td>
+      {% endif %}
+
+      {% if minbat == total_query.battery_size %}
+      <td align="center" bgcolor="#db2f0a">{{ total_query.battery_size }}</td>
+      {% elif maxbat == total_query.battery_size %}
+      <td align="center" bgcolor="#2ecc71">{{ total_query.battery_size }}</td>
+      {% else %}
+      <td align="center">{{ total_query.battery_size }}</td>
+      {% endif %}
+
+      {% if minwltp == total_query.WLTP_range %}
+      <td align="center" bgcolor="#db2f0a">{{ total_query.WLTP_range }}</td>
+      {% elif maxwltp == total_query.WLTP_range %}
+      <td align="center" bgcolor="#2ecc71">{{ total_query.WLTP_range }}</td>
+      {% else %}
+      <td align="center">{{ total_query.WLTP_range }}</td>
+      {% endif %}
+
+      {% if maxcost == total_query.cost %}
+      <td align="center" bgcolor="#db2f0a">{{ total_query.cost }}</td>
+      {% elif mincost == total_query.cost %}
+      <td align="center" bgcolor="#2ecc71">{{ total_query.cost }}</td>
+      {% else %}
+      <td align="center">{{ total_query.cost }}</td>
+      {% endif %}
+
+      {% if minpower == total_query.power %}
+      <td align="center" bgcolor="#db2f0a">{{ total_query.power }}</td>
+      {% elif maxpower == total_query.power %}
+      <td align="center" bgcolor="#2ecc71">{{ total_query.power }}</td>
+      {% else %}
+      <td align="center">{{ total_query.power }}</td>
+      {% endif %}
+
+      {% if minavg == avg[loop.index - 1] %}
+      <td align="center" bgcolor="#db2f0a">{{ avg[loop.index - 1] }}</td>
+      {% elif maxavg == avg[loop.index - 1] %}
+      <td align="center" bgcolor="#2ecc71">{{ avg[loop.index - 1] }}</td>
+      {% else %}
+      <td align="center">{{ avg[loop.index - 1] }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p align="center">Comparison failed...please choose atleast 2 electric vehicles to compare</p>
+  {% endif %}
+
+</body>
+
+</html>
